@@ -53,11 +53,11 @@ class ActionHelloWorld(Action):
         if tracker.get_slot('item') is not None:
             item_name = tracker.get_slot('item')
         item_price = 100000
-        query_params = {'user_id': 'test_user_id_1', 'user_name': 'test_user_name_1'}
-        response = requests.get('http://localhost:8080/chatMessage/testEndPoint', query_params)
-        print("res**************************")
-        print(response.json())
-        print("res**************************")
+        # query_params = {'user_id': 'test_user_id_1', 'user_name': 'test_user_name_1'}
+        # response = requests.get('http://localhost:8080/chatMessage/testEndPoint', query_params)
+        # print("res**************************")
+        # print(response.json())
+        # print("res**************************")
 
         for e in entities:
             if e['entity'] == "item" and e['value'] == 'hard':
