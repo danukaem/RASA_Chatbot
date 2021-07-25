@@ -11,6 +11,8 @@ intents:
   - hello_world
   - ask_item_exist
   - ask_non_item_exist
+  - item_price
+  - user_data_save
 
 entities:
   - item
@@ -18,6 +20,8 @@ entities:
   - screen
   - brand
   - color
+  - user_id
+  - user_name
 
 slots:
   item:
@@ -32,33 +36,41 @@ slots:
     type: text
   color:
     type: text
-
+  user_id:
+    type: text
+  user_name:
+    type: text
 
 actions:
   - action_hello_world
+  - action_save_user_data
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+    - text: "Hey! How are you {user_name}?"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+    - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+    - text: "Great, carry on!"
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "Bye {user_name}"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    - text: "I am a bot, powered by Rasa."
 
   utter_item_categories:
-  - text: "yes, there are {item} for {price}"
+    - text: "yes, there are {item} for {price}"
+
+  utter_item_price:
+    - text: "what is your budget for the {item} ?"
+
 
 session_config:
   session_expiration_time: 60

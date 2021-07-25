@@ -146,6 +146,24 @@ nlu:
     - I need a [hard disk](item)
     - I need a [hard](item)
 
+- intent: item_price
+  examples: |
+    - [75000 lkr](price)
+    - [200000 lkr](price)
+    - [12000lkr](price)
+    - [185000lkr](price)
+    - [laptop](item) for [75000 lkr](price)
+    - [computer](item) for [185000lkr](price)
+    - [phone](item) for [94000 lkr](price)
+    - [mobile](item) for [125000lkr](price)
+    - I need a [laptop](item) for [20000lkr](price)
+    - I need a [computer](item) for [50000 lkr](price)
+    - I need a [phone](item) for [20000lkr](price)
+    - I need a [smart phone](item) for [180000 lkr](price)
+    - I need a [mobile](item) for [220000lkr](price)
+    - I need a [mobile phone](item) for [220000 lkr](price)
+
+
 - intent: affirm
   examples: |
     - yes
@@ -205,3 +223,12 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: user_data_save
+  examples: |
+    - user name is [danuka](user_name) and user id is [100](user_id)
+    - user name is [eranda](user_name) and user id is [98](user_id)
+    - user name is [malawana](user_name) and user id is [99](user_id)
+    - user name is [samitha](user_name) and user id is [82](user_id)
+    - user name is [kosala](user_name) and user id is [70](user_id)
+    - user name is [jayasanka](user_name) and user id is [61](user_id)

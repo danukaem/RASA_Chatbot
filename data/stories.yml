@@ -34,7 +34,9 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: ask_item_exist
-  - action: utter_item_categories
+  - action: action_hello_world
+  - action: utter_item_price
+  - intent: item_price
   - action: action_hello_world
   - intent: mood_great
   - action: utter_goodbye
@@ -46,3 +48,8 @@ stories:
     - intent: ask_non_item_exist
     - action: action_hello_world
     - action: utter_goodbye
+
+- story: user data save
+  steps:
+    - intent: user_data_save
+    - action: action_save_user_data
