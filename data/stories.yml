@@ -28,3 +28,21 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: ask existing items
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_item_exist
+  - action: utter_item_categories
+  - action: action_hello_world
+  - intent: mood_great
+  - action: utter_goodbye
+
+- story: ask non existing items
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_non_item_exist
+    - action: action_hello_world
+    - action: utter_goodbye

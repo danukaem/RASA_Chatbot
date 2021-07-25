@@ -8,6 +8,34 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - hello_world
+  - ask_item_exist
+  - ask_non_item_exist
+
+entities:
+  - item
+  - ram
+  - screen
+  - brand
+  - color
+
+slots:
+  item:
+    type: text
+  price:
+    type: text
+  ram:
+    type: text
+  screen:
+    type: text
+  brand:
+    type: text
+  color:
+    type: text
+
+
+actions:
+  - action_hello_world
 
 responses:
   utter_greet:
@@ -28,6 +56,9 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_item_categories:
+  - text: "yes, there are {item} for {price}"
 
 session_config:
   session_expiration_time: 60
