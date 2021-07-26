@@ -79,8 +79,9 @@ class ActionSaveUserData(Action):
         if tracker.get_slot('user_id') is not None and tracker.get_slot('user_name') is not None:
             item_name = 'action-> user id is ' + tracker.get_slot('user_id') + " and user name is " + tracker.get_slot(
                 'user_name')
-        SlotSet("user_name", tracker.get_slot('user_name'))
 
+        # print('user name '+tracker.get_slot('user_name'))
+        # print('user id '+tracker.get_slot('user_id'))
         ############################ get request test
         # query_params = {'user_id': tracker.get_slot('user_id'), 'user_name': tracker.get_slot('user_name')}
         # response = requests.get('http://localhost:8080/chatMessage/testEndPoint', query_params)
@@ -101,6 +102,15 @@ class ActionSaveUserData(Action):
         #                          json=obj)
         # print(response.json())
 
-        dispatcher.utter_message(text="successfully saved")
+        user_name = ''
+        if tracker.get_slot('user_id') is not None:
+            query_params = {'userId': tracker.get_slot('user_id')}
+            response = requests.get('http://localhost:8080/user/getUserNameByUserId', query_params)
+            user_name = response.text
 
-        return []
+        if tracker.get_slot('user_name') is not None:
+            user_name = tracker.get_slot('user_name')
+
+        dispatcher.utter_message(text="successfully saved ")
+
+        return [SlotSet("user_name", user_name)]
