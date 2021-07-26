@@ -43,7 +43,7 @@ class ActionHelloWorld(Action):
         item_name = None
         print(entities)
         print("***********entities***************")
-        print()
+        print(tracker.slots)
         print("**************slots************")
         print(slots)
         print("**************************")
@@ -52,12 +52,46 @@ class ActionHelloWorld(Action):
 
         if tracker.get_slot('item') is not None:
             item_name = tracker.get_slot('item')
-        item_price = 100000
         # query_params = {'user_id': 'test_user_id_1', 'user_name': 'test_user_name_1'}
         # response = requests.get('http://localhost:8080/chatMessage/testEndPoint', query_params)
         # print("res**************************")
         # print(response.json())
         # print("res**************************")
+        item = ''
+        ram = ''
+        screen = ''
+        price = ''
+        brand = ''
+        color = ''
+        storage = ''
+        user_id = ''
+        item_extract_id = ''
+        if tracker.get_slot('item') is not None:
+            item = tracker.get_slot('item')
+        if tracker.get_slot('ram') is not None:
+            ram = tracker.get_slot('ram')
+        if tracker.get_slot('screen') is not None:
+            screen = tracker.get_slot('screen')
+        if tracker.get_slot('price') is not None:
+            price = tracker.get_slot('price')
+        if tracker.get_slot('brand') is not None:
+            brand = tracker.get_slot('brand')
+        if tracker.get_slot('color') is not None:
+            color = tracker.get_slot('color')
+        if tracker.get_slot('storage') is not None:
+            storage = tracker.get_slot('storage')
+        if tracker.get_slot('user_id') is not None:
+            user_id = tracker.get_slot('user_id')
+        if tracker.get_slot('item_extract_id') is not None:
+            item_extract_id = tracker.get_slot('item_extract_id')
+
+        query_params = {'item': item, 'ram': ram,
+                        'screen': screen, 'price': price,
+                        'brand': brand, 'color': color,
+                        'storage': storage, 'user_id': user_id,
+                        'item_extract_id': item_extract_id}
+        response = requests.get('http://localhost:8080/chatMessage/itemExtractRasaDataSave', query_params)
+        print(response.text)
 
         for e in entities:
             if e['entity'] == "item" and e['value'] == 'hard':
@@ -65,7 +99,8 @@ class ActionHelloWorld(Action):
 
         dispatcher.utter_message(text=item_name)
 
-        return [SlotSet("price", item_price)]
+        return [SlotSet("item_extract_id", response.text)]
+        # return [SlotSet("price",75000)]
 
 
 class ActionSaveUserData(Action):

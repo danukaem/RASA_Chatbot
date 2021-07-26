@@ -18,10 +18,13 @@ entities:
   - item
   - ram
   - screen
+  - price
   - brand
   - color
+  - storage
   - user_id
   - user_name
+  - item_extract_id
 
 slots:
   item:
@@ -36,9 +39,13 @@ slots:
     type: text
   color:
     type: text
+  storage:
+    type: text
   user_id:
     type: text
   user_name:
+    type: text
+  item_extract_id:
     type: text
 
 actions:
