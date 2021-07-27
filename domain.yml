@@ -25,6 +25,7 @@ entities:
   - user_id
   - user_name
   - item_extract_id
+  - session_id
 
 slots:
   item:
@@ -46,6 +47,8 @@ slots:
   user_name:
     type: text
   item_extract_id:
+    type: text
+  session_id:
     type: text
 
 actions:

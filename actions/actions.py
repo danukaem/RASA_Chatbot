@@ -39,14 +39,11 @@ class ActionHelloWorld(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         entities = tracker.latest_message['entities']
-        slots = tracker.get_slot('item')
         item_name = None
         print(entities)
         print("***********entities***************")
         print(tracker.slots)
         print("**************slots************")
-        print(slots)
-        print("**************************")
         if tracker.get_slot('user_name') is not None:
             print("user name is " + tracker.get_slot('user_name'))
 
@@ -66,6 +63,7 @@ class ActionHelloWorld(Action):
         storage = ''
         user_id = ''
         item_extract_id = ''
+        session_id = ''
         if tracker.get_slot('item') is not None:
             item = tracker.get_slot('item')
         if tracker.get_slot('ram') is not None:
@@ -84,12 +82,14 @@ class ActionHelloWorld(Action):
             user_id = tracker.get_slot('user_id')
         if tracker.get_slot('item_extract_id') is not None:
             item_extract_id = tracker.get_slot('item_extract_id')
+        if tracker.get_slot('session_id') is not None:
+            session_id = tracker.get_slot('session_id')
 
         query_params = {'item': item, 'ram': ram,
                         'screen': screen, 'price': price,
                         'brand': brand, 'color': color,
                         'storage': storage, 'user_id': user_id,
-                        'item_extract_id': item_extract_id}
+                        'item_extract_id': item_extract_id, 'session_id': session_id}
         response = requests.get('http://localhost:8080/chatMessage/itemExtractRasaDataSave', query_params)
         print(response.text)
 
@@ -111,9 +111,10 @@ class ActionSaveUserData(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        if tracker.get_slot('user_id') is not None and tracker.get_slot('user_name') is not None:
+        if tracker.get_slot('user_id') is not None and tracker.get_slot('user_name') is not None and tracker.get_slot(
+                'session_id') is not None:
             item_name = 'action-> user id is ' + tracker.get_slot('user_id') + " and user name is " + tracker.get_slot(
-                'user_name')
+                'user_name') + ' and session is ' + tracker.get_slot('session_id')
 
         # print('user name '+tracker.get_slot('user_name'))
         # print('user id '+tracker.get_slot('user_id'))
@@ -138,14 +139,20 @@ class ActionSaveUserData(Action):
         # print(response.json())
 
         user_name = ''
+        session_id = ''
         if tracker.get_slot('user_id') is not None:
             query_params = {'userId': tracker.get_slot('user_id')}
             response = requests.get('http://localhost:8080/user/getUserNameByUserId', query_params)
-            user_name = response.text
-
+            user_name = response.json()['user_name']
+            session_id = response.json()['session_id']
+            print("88888888888888888888")
+            print(response.json())
+            print(response.json()['user_name'])
+            print(response.json()['session_id'])
+            print("88888888888888888888")
         if tracker.get_slot('user_name') is not None:
             user_name = tracker.get_slot('user_name')
 
         dispatcher.utter_message(text="successfully saved ")
 
-        return [SlotSet("user_name", user_name)]
+        return [SlotSet("user_name", user_name), SlotSet("session_id", session_id)]
