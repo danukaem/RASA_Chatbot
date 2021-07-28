@@ -93,6 +93,7 @@ class ActionHelloWorld(Action):
         response = requests.get('http://localhost:8080/chatMessage/itemExtractRasaDataSave', query_params)
         print(response.text)
 
+
         for e in entities:
             if e['entity'] == "item" and e['value'] == 'hard':
                 item_name = 'there is no hard disk'
