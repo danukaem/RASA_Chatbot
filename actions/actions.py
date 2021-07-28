@@ -47,8 +47,8 @@ class ActionHelloWorld(Action):
         if tracker.get_slot('user_name') is not None:
             print("user name is " + tracker.get_slot('user_name'))
 
-        if tracker.get_slot('item') is not None:
-            item_name = tracker.get_slot('item')
+        # if tracker.get_slot('item') is not None:
+        #     item_name = tracker.get_slot('item')
         # query_params = {'user_id': 'test_user_id_1', 'user_name': 'test_user_name_1'}
         # response = requests.get('http://localhost:8080/chatMessage/testEndPoint', query_params)
         # print("res**************************")
@@ -64,26 +64,42 @@ class ActionHelloWorld(Action):
         user_id = ''
         item_extract_id = ''
         session_id = ''
-        if tracker.get_slot('item') is not None:
-            item = tracker.get_slot('item')
-        if tracker.get_slot('ram') is not None:
-            ram = tracker.get_slot('ram')
-        if tracker.get_slot('screen') is not None:
-            screen = tracker.get_slot('screen')
-        if tracker.get_slot('price') is not None:
-            price = tracker.get_slot('price')
-        if tracker.get_slot('brand') is not None:
-            brand = tracker.get_slot('brand')
-        if tracker.get_slot('color') is not None:
-            color = tracker.get_slot('color')
-        if tracker.get_slot('storage') is not None:
-            storage = tracker.get_slot('storage')
+        # if tracker.get_slot('item') is not None:
+        #     item = tracker.get_slot('item')
+        # if tracker.get_slot('ram') is not None:
+        #     ram = tracker.get_slot('ram')
+        # if tracker.get_slot('screen') is not None:
+        #     screen = tracker.get_slot('screen')
+        # if tracker.get_slot('price') is not None:
+        #     price = tracker.get_slot('price')
+        # if tracker.get_slot('brand') is not None:
+        #     brand = tracker.get_slot('brand')
+        # if tracker.get_slot('color') is not None:
+        #     color = tracker.get_slot('color')
+        # if tracker.get_slot('storage') is not None:
+        #     storage = tracker.get_slot('storage')
         if tracker.get_slot('user_id') is not None:
             user_id = tracker.get_slot('user_id')
         if tracker.get_slot('item_extract_id') is not None:
             item_extract_id = tracker.get_slot('item_extract_id')
         if tracker.get_slot('session_id') is not None:
             session_id = tracker.get_slot('session_id')
+
+        for entity in entities:
+            if entity['entity'] == 'item':
+                item = entity['value']
+            if entity['entity'] == 'ram':
+                ram = entity['value']
+            if entity['entity'] == 'screen':
+                screen = entity['value']
+            if entity['entity'] == 'price':
+                price = entity['value']
+            if entity['entity'] == 'brand':
+                brand = entity['value']
+            if entity['entity'] == 'color':
+                color = entity['value']
+            if entity['entity'] == 'storage':
+                storage = entity['value']
 
         query_params = {'item': item, 'ram': ram,
                         'screen': screen, 'price': price,
@@ -98,7 +114,7 @@ class ActionHelloWorld(Action):
             if e['entity'] == "item" and e['value'] == 'hard':
                 item_name = 'there is no hard disk'
 
-        dispatcher.utter_message(text=item_name)
+        dispatcher.utter_message(text="any other requirement ?")
 
         return [SlotSet("item_extract_id", response.text)]
         # return [SlotSet("price",75000)]
