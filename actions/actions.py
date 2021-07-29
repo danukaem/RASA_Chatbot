@@ -29,7 +29,7 @@ import requests
 #
 #         return []
 
-class ActionHelloWorld(Action):
+class ActionSearch(Action):
 
     def name(self) -> Text:
         return "action_search"
@@ -47,13 +47,6 @@ class ActionHelloWorld(Action):
         if tracker.get_slot('user_name') is not None:
             print("user name is " + tracker.get_slot('user_name'))
 
-        # if tracker.get_slot('item') is not None:
-        #     item_name = tracker.get_slot('item')
-        # query_params = {'user_id': 'test_user_id_1', 'user_name': 'test_user_name_1'}
-        # response = requests.get('http://localhost:8080/chatMessage/testEndPoint', query_params)
-        # print("res**************************")
-        # print(response.json())
-        # print("res**************************")
         item = ''
         ram = ''
         screen = ''
@@ -64,20 +57,6 @@ class ActionHelloWorld(Action):
         user_id = ''
         item_extract_id = ''
         session_id = ''
-        # if tracker.get_slot('item') is not None:
-        #     item = tracker.get_slot('item')
-        # if tracker.get_slot('ram') is not None:
-        #     ram = tracker.get_slot('ram')
-        # if tracker.get_slot('screen') is not None:
-        #     screen = tracker.get_slot('screen')
-        # if tracker.get_slot('price') is not None:
-        #     price = tracker.get_slot('price')
-        # if tracker.get_slot('brand') is not None:
-        #     brand = tracker.get_slot('brand')
-        # if tracker.get_slot('color') is not None:
-        #     color = tracker.get_slot('color')
-        # if tracker.get_slot('storage') is not None:
-        #     storage = tracker.get_slot('storage')
         if tracker.get_slot('user_id') is not None:
             user_id = tracker.get_slot('user_id')
         if tracker.get_slot('item_extract_id') is not None:
@@ -108,7 +87,10 @@ class ActionHelloWorld(Action):
                         'item_extract_id': item_extract_id, 'session_id': session_id}
         response = requests.get('http://localhost:8080/chatMessage/itemExtractRasaDataSave', query_params)
         print(response.text)
-
+        if tracker.get_slot('user_id') is not None and tracker.get_slot('session_id') is not None:
+            user_requirement = UserRequirement()
+            abc = user_requirement.get_user_requirements(tracker.get_slot('user_id'), tracker.get_slot('session_id'))
+            print(abc)
 
         for e in entities:
             if e['entity'] == "item" and e['value'] == 'hard':
@@ -117,7 +99,6 @@ class ActionHelloWorld(Action):
         dispatcher.utter_message(text="any other requirement ?")
 
         return [SlotSet("item_extract_id", response.text)]
-        # return [SlotSet("price",75000)]
 
 
 class ActionSaveUserData(Action):
@@ -173,3 +154,18 @@ class ActionSaveUserData(Action):
         dispatcher.utter_message(text="successfully saved ")
 
         return [SlotSet("user_name", user_name), SlotSet("session_id", session_id)]
+
+
+class UserRequirement:
+
+    def get_user_requirements(self, user_id, session_id):
+        query_params = {'user_id': user_id, 'session_id': session_id}
+        response = requests.get('http://localhost:8080/item/getChatItemRequirements', query_params)
+        print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+        print(response.json())
+        print(response.json()['price'])
+        print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+        if response.json()['price'] == '150000':
+            return response.json()['price']
+        else:
+            return "0"
