@@ -29,16 +29,29 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: ask existing items
+- story: ask existing items path 1
   steps:
   - intent: greet
   - action: utter_greet
   - intent: ask_item_exist
-  - action: action_hello_world
+  - action: action_search
   - action: utter_item_price
   - intent: item_price
-  - action: action_hello_world
-  - intent: mood_great
+  - action: action_search
+  - intent: affirm
+  - action: utter_happy
+  - action: utter_goodbye
+
+- story: ask existing items path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_item_exist
+  - action: action_search
+  - action: utter_item_price
+  - intent: item_price
+  - action: action_search
+  - intent: deny
   - action: utter_goodbye
 
 - story: ask non existing items
@@ -46,7 +59,7 @@ stories:
     - intent: greet
     - action: utter_greet
     - intent: ask_non_item_exist
-    - action: action_hello_world
+    - action: action_search
     - action: utter_goodbye
 
 - story: user data save

@@ -32,7 +32,7 @@ import requests
 class ActionHelloWorld(Action):
 
     def name(self) -> Text:
-        return "action_hello_world"
+        return "action_search"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,

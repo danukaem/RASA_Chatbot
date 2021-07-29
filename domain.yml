@@ -52,7 +52,7 @@ slots:
     type: text
 
 actions:
-  - action_hello_world
+  - action_search
   - action_save_user_data
 
 responses:
