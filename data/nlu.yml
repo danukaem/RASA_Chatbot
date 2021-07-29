@@ -16,7 +16,6 @@ nlu:
       - goodmorning
       - goodevening
       - good afternoon
-
   - intent: goodbye
     examples: |
       - good afternoon
@@ -30,7 +29,6 @@ nlu:
       - see you around
       - bye bye
       - see you later
-
   - intent: ask_item_exist
     examples: |
       - what [computers](item) are there ?
@@ -126,7 +124,6 @@ nlu:
       - are there a [16gb](ram) memory [16inch](screen)inch screen [apple](brand) [white](color) color [mobile phone](item) for [230000 rupees](price)  ?
       - are there a [16gb](ram) ram [4](screen)inch monitor [apple](brand) [white](color) color [mobile phone](item) for [240000lkr](price)  ?
       - are there a [16gb](ram) ram and [5](screen)inch screen [apple](brand) [white](color) color [mobile phone](item)  for [250000 lkr](price) ?
-
   - intent: ask_non_item_exist
     examples: |
       - are there [books](item) ?
@@ -145,7 +142,6 @@ nlu:
       - I need a [battery](item)
       - I need a [hard disk](item)
       - I need a [hard](item)
-
   - intent: item_price
     examples: |
       - [75000 lkr](price)
@@ -162,8 +158,6 @@ nlu:
       - I need a [smart phone](item) for [180000 lkr](price)
       - I need a [mobile](item) for [220000lkr](price)
       - I need a [mobile phone](item) for [220000 lkr](price)
-
-
   - intent: affirm
     examples: |
       - yes
@@ -172,7 +166,6 @@ nlu:
       - of course
       - that sounds good
       - correct
-
   - intent: deny
     examples: |
       - no
@@ -182,7 +175,6 @@ nlu:
       - don't like that
       - no way
       - not really
-
   - intent: mood_great
     examples: |
       - perfect
@@ -199,7 +191,6 @@ nlu:
       - so so perfect
       - so good
       - so perfect
-
   - intent: mood_unhappy
     examples: |
       - my day was horrible
@@ -216,14 +207,12 @@ nlu:
       - extremly sad
       - so saad
       - so sad
-
   - intent: bot_challenge
     examples: |
       - are you a bot?
       - are you a human?
       - am I talking to a bot?
       - am I talking to a human?
-
   - intent: user_data_save
     examples: |
       - user name is [danuka](user_name) and user id is [100](user_id)
