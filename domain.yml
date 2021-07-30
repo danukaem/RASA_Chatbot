@@ -8,10 +8,8 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - hello_world
   - ask_item_exist
   - ask_non_item_exist
-  - item_price
   - user_data_save
 
 entities:
@@ -78,8 +76,6 @@ responses:
   utter_item_categories:
     - text: "yes, there are {item} for {price}"
 
-  utter_item_price:
-    - text: "what is your budget for the {item} ?"
 
 
 session_config:

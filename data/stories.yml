@@ -35,9 +35,6 @@ stories:
   - action: utter_greet
   - intent: ask_item_exist
   - action: action_search
-  - action: utter_item_price
-  - intent: item_price
-  - action: action_search
   - intent: affirm
   - action: utter_happy
   - action: utter_goodbye
@@ -48,19 +45,8 @@ stories:
   - action: utter_greet
   - intent: ask_item_exist
   - action: action_search
-  - action: utter_item_price
-  - intent: item_price
-  - action: action_search
   - intent: deny
   - action: utter_goodbye
-
-- story: ask non existing items
-  steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: ask_non_item_exist
-    - action: action_search
-    - action: utter_goodbye
 
 - story: user data save
   steps:

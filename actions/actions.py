@@ -39,7 +39,7 @@ class ActionSearch(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         entities = tracker.latest_message['entities']
-        item_name = None
+        # item_name = None
         print(entities)
         print("***********entities***************")
         print(tracker.slots)
@@ -87,18 +87,26 @@ class ActionSearch(Action):
                         'item_extract_id': item_extract_id, 'session_id': session_id}
         response = requests.get('http://localhost:8080/chatMessage/itemExtractRasaDataSave', query_params)
         print(response.text)
+
+        response_message = 'please, can you sign in again and do chat..'
         if tracker.get_slot('user_id') is not None and tracker.get_slot('session_id') is not None:
+            print('----------------------------------------')
+            print(tracker.get_slot('user_id'))
+            print(tracker.get_slot('session_id'))
+            print('----------------------------------------')
             user_requirement = UserRequirement()
-            abc = user_requirement.get_user_requirements(tracker.get_slot('user_id'), tracker.get_slot('session_id'))
-            print(abc)
+            response_message = user_requirement.get_user_requirements(tracker.get_slot('user_id'),
+                                                                      tracker.get_slot('session_id'))
+            print(response_message)
 
-        for e in entities:
-            if e['entity'] == "item" and e['value'] == 'hard':
-                item_name = 'there is no hard disk'
+        # for e in entities:
+        #     if e['entity'] == "item" and e['value'] == 'hard':
+        #         item_name = 'there is no hard disk'
 
-        dispatcher.utter_message(text="any other requirement ?")
+        dispatcher.utter_message(text=response_message)
 
-        return [SlotSet("item_extract_id", response.text)]
+        return []
+        # return [SlotSet("item_extract_id", response.text)]
 
 
 class ActionSaveUserData(Action):
@@ -163,9 +171,21 @@ class UserRequirement:
         response = requests.get('http://localhost:8080/item/getChatItemRequirements', query_params)
         print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         print(response.json())
-        print(response.json()['price'])
         print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-        if response.json()['price'] == '150000':
-            return response.json()['price']
+        res_message = ''
+        if response.json()['itemCategory'] == '':
+            res_message = 'can\'t recognize the item . there are only phones and laptops'
+        elif response.json()['ram'] == '':
+            res_message = "what is your expected ram size of the {}? ".format(response.json()['itemCategory'])
+        elif response.json()['screen'] == '':
+            res_message = "what is your expected screen size of the {}? ".format(response.json()['itemCategory'])
+        elif response.json()['price'] == '':
+            res_message = "can you tell me about the budget for the {}? ".format(response.json()['itemCategory'])
+        elif response.json()['brand'] == '':
+            res_message = "which brand is you looking for the {} ? ".format(response.json()['itemCategory'])
+        elif response.json()['color'] == '':
+            res_message = "what is your expected color for the {}? ".format(response.json()['itemCategory'])
         else:
-            return "0"
+            res_message = "please look at the suggested items that are forecasted according to your requirements. did that help you ?"
+
+        return res_message
