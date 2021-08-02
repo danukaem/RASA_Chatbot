@@ -92,47 +92,76 @@ nlu:
       - How much does a [nokia](brand) [mobile](item)?
       - How much does a [samsung](brand) [mobile phone](item) ?
       - I need a [2gb](ram) ram [14inch](screen) screen [hp](brand) [red](color) color [laptop](item) for [10000lkr](price)
-      - I need to buy a [2gb](ram) ram [14inch](screen) screen [hp](brand) [red](color) color [laptop](item) for [10000 lkr](price)
+      - I need to buy a [2gb](ram) ram [14inch](screen) screen [hp](brand) [pink](color) color [laptop](item) for [10000 lkr](price)
+      - I need to buy a [2gb](ram) ram [14inch](screen) screen [hp](brand) [gray](color) color [laptop](item) for [10000 lkr](price)
       - need to buy a [2gb](ram) ram [17inches](screen) screen [hp](brand) [red](color) color [laptop](item) for [10000 lkr](price)
       - i need a [2 gb](ram) memory [14 inch](screen) screen [asus](brand) [red](color) color [laptop](item) for [20000lkr](price)
+      - i need to buy a [2 gb](ram) ram [14 inch](screen) display [microsoft](brand) [green](color) color [laptop](item) for [20000 lkr](price)
+      - i need to buy a [2 gb](ram) ram [14 inch](screen) display [hp](brand) [gray](color) color [laptop](item) for [20000 lkr](price)
       - i need to buy a [2 gb](ram) ram [14 inch](screen) display [hp](brand) [red](color) color [laptop](item) for [20000 lkr](price)
+      - i want to to buy a [2 gb](ram) ram [14 inch](screen) display [htc](brand) [red](color) color [laptop](item) for [20000 lkr](price)
       - I need a [3gb](ram) ram  [15inch](screen) screen [acer](brand) [blue](color) color [computer](item) for [30000](price)
-      - need a [3 gb](ram) memory [15 inch](screen) display [acer](brand) [blue](color) color [computer](item) for [40000lkr](price)
+      - I need a [3gb](ram) ram  [5inch](screen) screen [acer](brand) [pink](color) color [computer](item) for [30000](price)
+      - I need a [3gb](ram) ram  [6inch](screen) screen [google](brand) [blue](color) color [computer](item) for [30000](price)
+      - need a [3 gb](ram) memory [15 inch](screen) display [acer](brand) [green](color) color [computer](item) for [40000lkr](price)
+      - need a [3 gb](ram) memory [7 inch](screen) display [acer](brand) [gray](color) color [computer](item) for [40000lkr](price)
       - I need to buy a [3 gb](ram) ram [15 inch](screen) screen size[acer](brand) [blue](color) color [computer](item) for [40000](price)
+      - I want to to buy a [3 gb](ram) ram [15 inch](screen) screen size[google](brand) [orange](color) color [computer](item) for [40000](price)
       - i need to buy a [3 gb](ram) ram [15 inches](screen) screen size[acer](brand) [blue](color) color [computer](item) for [40000](price)
-      - I need a [4gb](ram) ram [16](screen) screen [dell](brand) [black](color) color [lap top](item) for [50000](price)
+      - I want to a [4gb](ram) ram [16](screen) screen [dell](brand) [black](color) color [lap top](item) for [50000](price)
+      - I need a [4gb](ram) ram [16](screen) screen [microsoft](brand) [black](color) color [lap top](item) for [50000](price)
       - I need a [8gb](ram) memory [17](screen) display [azus](brand) [brown](color) color [laptop](item) for [60000 lkr](price)
-      - I need a [1gb](ram) ram [4](screen) display [hp](brand) [white](color) color [phone](item) for [70000](price)
+      - I want a [8gb](ram) memory [17](screen) display [azus](brand) [purple](color) color [laptop](item) for [60000 lkr](price)
+      - I want to a [8gb](ram) memory [17](screen) display [azus](brand) [pink](color) color [laptop](item) for [60000 lkr](price)
+      - I need a [1gb](ram) ram [4](screen) display [hp](brand) [green](color) color [phone](item) for [70000](price)
+      - I need a [1gb](ram) ram [4](screen) display [htc](brand) [white](color) color [phone](item) for [70000](price)
       - i need to buy a [1gb](ram) ram [4](screen) screen [hp](brand) [white](color) color [phone](item) for [70000 rupees](price)
-      - I need a [16gb](ram) ram [5](screen) screen [Samsung](brand) [white](color) color [smart phone](item) for [80000](price)
+      - i need to buy a [1gb](ram) ram [4](screen) screen [hp](brand) [gray](color) color [phone](item) for [70000 rupees](price)
+      - i need to buy a [1gb](ram) ram [4](screen) screen [hp](brand) [yellow](color) color [phone](item) for [70000 rupees](price)
+      - I want a [16gb](ram) ram [5](screen) screen [Samsung](brand) [white](color) color [smart phone](item) for [80000](price)
       - i need a [16 gb](ram) ram [6inch](screen) monitor size [nokia](brand) [white](color) color [mobile](item) for [90000rupees](price)
-      - need to buy a [16 gb](ram) ram [6inch](screen) screen [nokia](brand) [white](color) color [mobile](item) for [90000 rupees](price)
+      - need to buy a [16 gb](ram) ram [3inch](screen) screen [nokia](brand) [white](color) color [mobile](item) for [90000 rupees](price)
       - I need a [16gb](ram) ram [15.6](screen) display [apple](brand) [white](color) color [mobile phone](item) for [100000](price)
+      - I need a [16gb](ram) ram [15.6](screen) display [google](brand) [white](color) color [mobile phone](item) for [100000](price)
       - are there a [1gb](ram) ram [14](screen) screen [hp](brand) [red](color) color [laptop](item) for [110000 rupees](price)  ?
       - are there a [2gb](ram) ram [14](screen) display size [hp](brand) [red](color) color [laptop](item) for [110000](price)  ?
-      - are there a [3 gb](ram) ram [15](screen) screen [acer](brand) [blue](color) color [computer](item)  for [120000rupees](price) ?
-      - are there a [3 gb](ram) ram [15inches](screen) screen [acer](brand) [blue](color) color [computer](item)  for [120000rupees](price) ?
+      - are there a [2gb](ram) ram [14](screen) display size [hp](brand) [yellow](color) color [laptop](item) for [110000](price)  ?
+      - are there a [2gb](ram) ram [14](screen) display size [microsoft](brand) [red](color) color [laptop](item) for [110000](price)  ?
+      - are there a [3 gb](ram) ram [15](screen) screen [acer](brand) [green](color) color [computer](item)  for [120000rupees](price) ?
+      - are there a [3 gb](ram) ram [15](screen) screen [acer](brand) [gray](color) color [computer](item)  for [120000rupees](price) ?
+      - are there a [3 gb](ram) ram [15inches](screen) screen [blackberry](brand) [blue](color) color [computer](item)  for [120000rupees](price) ?
       - are there a [1 gb](ram) ram [15](screen) screen size [acer](brand) [blue](color) color [computer](item)  for [120000](price) ?
-      - are there a [3 gb](ram) memory [15](screen) screen [acer](brand) [blue](color) color [computer](item)  for [120000rupees](price) ?
+      - are there a [3 gb](ram) memory [15](screen) screen [acer](brand) [orange](color) color [computer](item)  for [120000rupees](price) ?
+      - are there a [3 gb](ram) memory [15](screen) screen [acer](brand) [purple](color) color [computer](item)  for [120000rupees](price) ?
+      - are there a [3 gb](ram) memory [15](screen) screen [acer](brand) [pink](color) color [computer](item)  for [120000rupees](price) ?
       - are there a [4 gb](ram) ram [16inch](screen) monitor [dell](brand) [black](color) color [lap top](item)  for [130000](price) ?
       - are there a [4 gb](ram) ram [16inches](screen) monitor [dell](brand) [black](color) color [lap top](item)  for [130000](price) ?
-      - are there a [4 gb](ram) ram [16 inches](screen) monitor [dell](brand) [black](color) color [lap top](item)  for [130000](price) ?
-      - are there a [4gb](ram) memory [16 inch](screen) screen [dell](brand) [black](color) color [lap top](item) for [140000rupees](price)  ?
+      - are there a [4 gb](ram) ram [16inches](screen) monitor [htc](brand) [black](color) color [lap top](item)  for [130000](price) ?
+      - are there a [4 gb](ram) ram [16inches](screen) monitor [microsoft](brand) [black](color) color [lap top](item)  for [130000](price) ?
+      - are there a [4 gb](ram) ram [16 inches](screen) monitor [blackberry](brand) [black](color) color [lap top](item)  for [130000](price) ?
+      - are there a [4 gb](ram) ram [16 inches](screen) monitor [blackberry](brand) [yellow](color) color [lap top](item)  for [130000](price) ?
+      - are there a [4 gb](ram) ram [16 inches](screen) monitor [blackberry](brand) [purple](color) color [lap top](item)  for [130000](price) ?
+      - are there a [4gb](ram) memory [16 inch](screen) screen [dell](brand) [purple](color) color [lap top](item) for [140000rupees](price)  ?
+      - are there a [4gb](ram) memory [16 inch](screen) screen [google](brand) [black](color) color [lap top](item) for [140000rupees](price)  ?
       - are there a [8 gb](ram) ram [17inch](screen) display [azus](brand) [brown](color) color [laptop](item)  for [150000](price) ?
-      - are there a [8 gb](ram) ram [17 inches](screen) display [azus](brand) [brown](color) color [laptop](item)  for [150000](price) ?
+      - are there a [8 gb](ram) ram [17 inches](screen) display [azus](brand) [orange](color) color [laptop](item)  for [150000](price) ?
       - are there a [8gb](ram) ram [17 inch](screen) monitor [azus](brand) [brown](color) color [laptop](item) for [160000 rupees](price)  ?
       - are there a [1 gb](ram) memory [4inch](screen) screen [hp](brand) [white](color) color [phone](item)  for [170000](price) ?
-      - are there a [16gb](ram) ram [5inch](screen) screen [Samsung](brand) [white](color) color [smart phone](item)  for [180000 rupees](price) ?
-      - are there a [16gb](ram) ram  [6](screen)inch monitor [nokia](brand) [white](color) color [mobile](item) for [190000](price)  ?
+      - are there a [16gb](ram) ram [5inch](screen) screen [blackberry](brand) [white](color) color [smart phone](item)  for [180000 rupees](price) ?
+      - are there a [16gb](ram) ram  [6](screen)inch monitor [nokia](brand) [orange](color) color [mobile](item) for [190000](price)  ?
+      - are there a [16gb](ram) ram  [6inches](screen)inch monitor [microsoft](brand) [white](color) color [mobile](item) for [190000](price)  ?
       - are there a [16gb](ram) ram  [6inches](screen)inch monitor [nokia](brand) [white](color) color [mobile](item) for [190000](price)  ?
       - are there a [16gb](ram) memory [15.6](screen)inch screen [apple](brand) [white](color) color [mobile phone](item) for [200000](price)  ?
-      - are there a [16gb](ram) ram  15](screen)inch display [apple](brand) [white](color) color [mobile phone](item)  for [210000](price) ?
+      - are there a [16gb](ram) ram  15](screen)inch display [apple](brand) [orange](color) color [mobile phone](item)  for [210000](price) ?
       - are there a [16gb](ram) memory [14](screen)inch screen [apple](brand) [white](color) color [mobile phone](item) for [220000rupees](price) ?
+      - are there a [16gb](ram) memory [14](screen)inch screen [apple](brand) [yellow](color) color [mobile phone](item) for [220000rupees](price) ?
       - are there a [16gb](ram) memory [16inch](screen)inch screen size [apple](brand) [white](color) color [mobile phone](item) for [230000 rupees](price)  ?
       - are there a [16gb](ram) ram [4](screen)inch monitor [apple](brand) [white](color) color [mobile phone](item) for [240000lkr](price)  ?
       - are there a [16gb](ram) ram and [5](screen)inch screen [apple](brand) [white](color) color [mobile phone](item)  for [250000 lkr](price) ?
+      - are there a [16gb](ram) ram and [5](screen)inch screen [apple](brand) [purple](color) color [mobile phone](item)  for [250000 lkr](price) ?
       - i need [6inches](screen) display [apple](brand) [smart phone](item)
       - i need [5 inches](screen) display [samsung](brand) [mobile](item)
+      - i want [5 inches](screen) display [samsung](brand) [mobile](item)
       - i need [5.5inches](screen) display [samsung](brand) [smart mobile](item)
       - display size is [5inches](screen)
       - screen size is [6inches](screen)
