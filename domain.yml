@@ -20,6 +20,7 @@ entities:
   - brand
   - color
   - storage
+  - processor
   - user_id
   - user_name
   - item_extract_id
@@ -31,6 +32,8 @@ slots:
   price:
     type: text
   ram:
+    type: text
+  processor:
     type: text
   screen:
     type: text

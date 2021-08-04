@@ -49,6 +49,7 @@ class ActionSearch(Action):
         brand = ''
         color = ''
         storage = ''
+        processor = ''
         user_id = ''
         item_extract_id = ''
         session_id = ''
@@ -74,15 +75,17 @@ class ActionSearch(Action):
                 color = entity['value']
             if entity['entity'] == 'storage':
                 storage = entity['value']
+            if entity['entity'] == 'processor':
+                processor = entity['value']
 
         query_params = {'item': item, 'ram': ram,
                         'screen': screen, 'price': price,
                         'brand': brand, 'color': color,
-                        'storage': storage, 'user_id': user_id,
+                        'storage': storage, 'user_id': user_id, 'processor': processor,
                         'item_extract_id': item_extract_id, 'session_id': session_id}
         response = requests.get('http://localhost:8080/chatMessage/itemExtractRasaDataSave', query_params)
 
-        response_message = 'please, can you sign in again and do chat..'
+        response_message = 'please, can you sign in again and start the chat..'
         if tracker.get_slot('user_id') is not None and tracker.get_slot('session_id') is not None:
             user_requirement = UserRequirement()
             response_message = user_requirement.get_user_requirements(tracker.get_slot('user_id'),
@@ -152,6 +155,9 @@ class UserRequirement:
         res_message = ''
         if response.json()['itemCategory'] == '':
             res_message = 'can\'t recognize the item . there are only phones and laptops'
+        elif response.json()['processor'] == '':
+            res_message = "what is your expected processor forsearch by processor the {}? ".format(
+                response.json()['itemCategory'])
         elif response.json()['ram'] == '':
             res_message = "what is your expected ram size of the {}? ".format(response.json()['itemCategory'])
         elif response.json()['screen'] == '':
