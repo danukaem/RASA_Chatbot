@@ -169,13 +169,19 @@ nlu:
       - screen size is [4 inches](screen)
       - display size is [6.5 inch](screen)
       - [4gb](ram) ram
-      - [32gb](ram) ram
+      - [32gb](ram) ram is enough
       - [16 gb](ram) ram
+      - [16 gb](ram) ram is good
       - [8 gb](ram) memory
       - [4gb](ram) memory
       - [black](color) color
       - [blue](color) color
+      - [blue](color) color is good
       - [white](color) color
+      - my budget is around [100000 lkr](price)
+      - budget is around [1245lkr](price)
+      - my budget around [66548rupees](price)
+      - my budget is around [11248 rupees](price)
   - intent: affirm
     examples: |
       - yes
