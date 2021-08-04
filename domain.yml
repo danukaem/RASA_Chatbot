@@ -55,7 +55,7 @@ actions:
 
 responses:
   utter_greet:
-    - text: "Hey! How are you {user_name}?"
+    - text: "Hey! how can I help you {user_name}?"
 
   utter_cheer_up:
     - text: "Here is something to cheer you up:"

@@ -39,11 +39,6 @@ class ActionSearch(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         entities = tracker.latest_message['entities']
-        # item_name = None
-        print(entities)
-        print("***********entities***************")
-        print(tracker.slots)
-        print("**************slots************")
         if tracker.get_slot('user_name') is not None:
             print("user name is " + tracker.get_slot('user_name'))
 
@@ -86,22 +81,12 @@ class ActionSearch(Action):
                         'storage': storage, 'user_id': user_id,
                         'item_extract_id': item_extract_id, 'session_id': session_id}
         response = requests.get('http://localhost:8080/chatMessage/itemExtractRasaDataSave', query_params)
-        print(response.text)
 
         response_message = 'please, can you sign in again and do chat..'
         if tracker.get_slot('user_id') is not None and tracker.get_slot('session_id') is not None:
-            print('----------------------------------------')
-            print(tracker.get_slot('user_id'))
-            print(tracker.get_slot('session_id'))
-            print('----------------------------------------')
             user_requirement = UserRequirement()
             response_message = user_requirement.get_user_requirements(tracker.get_slot('user_id'),
                                                                       tracker.get_slot('session_id'))
-            print(response_message)
-
-        # for e in entities:
-        #     if e['entity'] == "item" and e['value'] == 'hard':
-        #         item_name = 'there is no hard disk'
 
         dispatcher.utter_message(text=response_message)
 
@@ -151,11 +136,6 @@ class ActionSaveUserData(Action):
             response = requests.get('http://localhost:8080/user/getUserNameByUserId', query_params)
             user_name = response.json()['user_name']
             session_id = response.json()['session_id']
-            print("88888888888888888888")
-            print(response.json())
-            print(response.json()['user_name'])
-            print(response.json()['session_id'])
-            print("88888888888888888888")
         if tracker.get_slot('user_name') is not None:
             user_name = tracker.get_slot('user_name')
 
@@ -169,9 +149,6 @@ class UserRequirement:
     def get_user_requirements(self, user_id, session_id):
         query_params = {'user_id': user_id, 'session_id': session_id}
         response = requests.get('http://localhost:8080/item/getChatItemRequirements', query_params)
-        print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-        print(response.json())
-        print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         res_message = ''
         if response.json()['itemCategory'] == '':
             res_message = 'can\'t recognize the item . there are only phones and laptops'
