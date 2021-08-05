@@ -156,7 +156,7 @@ class UserRequirement:
         if response.json()['itemCategory'] == '':
             res_message = 'can\'t recognize the item . there are only phones and laptops'
         elif response.json()['processor'] == '':
-            res_message = "what is your expected processor forsearch by processor the {}? ".format(
+            res_message = "what is your expected processor for the {}? ".format(
                 response.json()['itemCategory'])
         elif response.json()['ram'] == '':
             res_message = "what is your expected ram size of the {}? ".format(response.json()['itemCategory'])
