@@ -163,7 +163,7 @@ class UserRequirement:
         elif response.json()['screen'] == '':
             res_message = "what is your expected screen size of the {}? ".format(response.json()['itemCategory'])
         elif response.json()['price'] == '':
-            res_message = "can you tell me about the budget for the {}? ".format(response.json()['itemCategory'])
+            res_message = "can you tell me about the maximum budget for the {}? ".format(response.json()['itemCategory'])
         elif response.json()['brand'] == '':
             res_message = "which brand is you looking for the {} ? ".format(response.json()['itemCategory'])
         elif response.json()['color'] == '':
